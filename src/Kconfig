@@ -27,6 +27,8 @@ choice
         bool "Beaglebone PRU"
     config MACH_LINUX
         bool "Linux process"
+    config MACH_PIZERO
+        bool "Raspberry Pi GPIO process"
     config MACH_SIMU
         bool "Host simulator"
 endchoice
