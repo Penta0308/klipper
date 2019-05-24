@@ -3,6 +3,8 @@
 
 #include <stdint.h> // uint8_t
 
+#include <bcm2835.h> // This program needs BCM2835 GPIO Library https://raspberry-projects.com/pi/programming-in-c/io-pins/bcm2835-by-mike-mccauley
+
 struct gpio_out {
     uint32_t pin;
 };
