@@ -13,7 +13,7 @@
 #include "internal.h" // console_setup
 #include "sched.h" // sched_main
 
-DECL_CONSTANT_STR("MCU", "linux");
+DECL_CONSTANT_STR("MCU", "pizero");
 
 
 /****************************************************************
@@ -31,6 +31,7 @@ realtime_setup(void)
         report_errno("sched_setscheduler", ret);
         return -1;
     }
+	if(!bcm2835_init()) return -1;
     return 0;
 }
 
@@ -93,5 +94,6 @@ main(int argc, char **argv)
 
     // Main loop
     sched_main();
+	if(!bcm2835_close()) return -1;
     return 0;
 }
